@@ -31,4 +31,9 @@ public class UsuarioDTO {
     @NotNull(message = "El ID de cargo no puede ser nulo")
     @Positive(message = "El ID de cargo debe ser positivo")
     private Long idCargo;
+
+    //Este es un campo adiccional para mostrar el nombre del cargo, campo como tal no existe en la tabla de usuario
+    private String nombreCargo;
+
+    private String nombreRol;
 }

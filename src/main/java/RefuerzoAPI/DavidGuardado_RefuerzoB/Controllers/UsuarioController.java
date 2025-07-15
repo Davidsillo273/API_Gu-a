@@ -9,24 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//
-//        *  * * * * * * *
-//      *                 *
-//    *                     *
-//  *                        *
-// *                          *
-// *                          *
-// *                          *
-//  *                        *
-//    *                    *
-//      *                *
-//        * * * * * * *
 @RestController
 @RequestMapping("/apiUsuario")
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService acceso;
+     UsuarioService acceso;
 
     //localhost:8080/apiUsuario/datosUsuarios
     @GetMapping("/DatosUsuarios")

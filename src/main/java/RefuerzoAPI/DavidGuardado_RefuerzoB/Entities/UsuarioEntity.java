@@ -1,16 +1,16 @@
 package RefuerzoAPI.DavidGuardado_RefuerzoB.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
+@Table(name= "TBUSUARIO")
 @Getter @Setter
 public class UsuarioEntity {
 
     //Atributos
+    @Id
     @Column(name = "IDUSUARIO")
     private Long id;
     @Column(name = "NOMBRE")
@@ -21,8 +21,10 @@ public class UsuarioEntity {
     @Column(name = "IDGRUPOEXPO")
     private Long idGrupoExpo;
 
-    @Column(name = "IDROL")
-    private Long idRol;
+    @ManyToOne
+    @JoinColumn(name = "IDROL", referencedColumnName = "IDROL")
+    private RolEntity rol;
+
     @Column(name = "CORREO")
     private String correo;
 
@@ -33,5 +35,5 @@ public class UsuarioEntity {
     //Long lo mismo, pero admite NULE.
     @ManyToOne
     @JoinColumn(name = "IDCARGO", referencedColumnName = "IDCARGO")
-    private CargoEntity idCargo;
+    private CargoEntity cargo;
 }
